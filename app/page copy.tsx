@@ -22,6 +22,9 @@ import { HeroParallaxDemo } from '@/components/HeroParallax/HeroParallax';
 import { IconCloudDemo } from '@/components/magicui/IconCloudDemo';
 
 
+// create a beautiful landing page for "Webbly AI"—a modern IT service website offering software development, web, mobile, and AI services—I'll redesign your page.tsx using your existing components
+
+
 export default function Home() {
   return (
     <div>

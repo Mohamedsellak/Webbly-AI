@@ -92,7 +92,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
                                     : `blur(${blurAmount}px)`
                                 : isActive
                                     ? `blur(0px)`
-                                    : `blur(${blurAmount}px)` ,
+                                    : `blur(${blurAmount}px)`,
                             transition: `filter ${animationDuration}s ease`,
                         } as React.CSSProperties}
                         onMouseEnter={() => handleMouseEnter(index)}
