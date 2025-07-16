@@ -1,340 +1,452 @@
+'use client';
+
 import React from 'react';
-// Import components as needed
+import type { ReactElement } from 'react';
+import { motion } from 'framer-motion';
 import Aurora from '@/components/Aurora/Aurora';
-import Threads from '@/components/Threads/Threads';
-import Hyperspeed from '@/components/Hyperspeed/Hyperspeed';
 import Orb from '@/components/Orb/Orb';
 import SplashCursor from '@/components/SplashCursor/SplashCursor';
 import SplitText from '@/components/SplitText/SplitText';
 import BlurText from '@/components/BlurText/BlurText';
 import CurvedLoop from '@/components/CurvedLoop/CurvedLoop';
 import GradientText from '@/components/GradientText/GradientText';
-import FallingText from '@/components/FallingText/FallingText';
 import DecryptedText from '@/components/DecryptedText/DecryptedText';
-import TrueFocus from '@/components/TrueFocus/TrueFocus';
-import ScrambledText from '@/components/ScrambledText/ScrambledText';
-import RotatingText from '@/components/RotatingText/RotatingText';
-import MagicBento from '@/components/MagicBento/MagicBento';
-import Masonry from '@/components/Masonry/Masonry';
-import ProfileCard from '@/components/ProfileCard/ProfileCard';
-import { Navbar } from '@/components/Navbar/Navbar';
+// import RotatingText from '@/components/RotatingText/RotatingText';
+// import ProfileCard from '@/components/ProfileCard/ProfileCard';
+import Navbar from '@/components/Navbar/Navbar';
 import { HeroParallaxDemo } from '@/components/HeroParallax/HeroParallax';
 import { IconCloudDemo } from '@/components/magicui/IconCloudDemo';
+// import TextGenerateEffectDemo from '@/components/TextGenerateEffect/TextGenerateEffectDemo';
 
-
-export default function Home() {
+export default function Home(): ReactElement {
   return (
-    <div>
-
-      <IconCloudDemo />
-
-  
-
-      <div className='flex justify-center items-center mt-8'>
-        <h1 className='text-3xl font-bold'>Our Project Section</h1>
-        <div>
-          <HeroParallaxDemo />
-        </div>
-
-      </div>
-
-      {/* Navbar */}
-
-
-      Dock Navbar 
-
-      <div>
-        <Navbar />
-      </div>
-
+    <main className="relative min-h-screen bg-[#0A0A0F] text-white overflow-x-hidden">
+      {/* Global Elements */}
       <SplashCursor />
+      <div className="fixed inset-0 z-0 bg-gradient-to-b from-purple-900/20 via-transparent to-emerald-900/20">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-10" />
+        <Aurora />
+      </div>
 
-      {/* hero */}
-      <div className='w-full h-screen relative overflow-hidden'>
-        <Aurora
-          colorStops={["#3A29FF", "#4dff00", "#3A29FF"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={1.0}
-        />
+      {/* Hero Section */}
+      <div className="relative min-h-screen flex flex-col">
+        <Navbar />
+        <div className="flex-1 flex items-center justify-center px-4 pt-20">
+          <div className="relative z-20 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.2, 0.65, 0.3, 0.9] }}
+              className="relative text-left space-y-10"
+            >
+              <div className="space-y-8">
+                <div className="relative">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/10 to-emerald-500/10 border border-purple-500/20 relative overflow-hidden group hover:scale-105 transform transition-transform duration-300"
+                  >
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-emerald-500/10 to-purple-500/10 rounded-full"
+                      animate={{
+                        backgroundPosition: ['200% 50%', '-100% 50%'],
+                      }}
+                      transition={{
+                        duration: 15,
+                        repeat: Infinity,
+                        ease: "linear"
+                      }}
+                    />
+                    <span className="relative flex items-center gap-2">
+                      <motion.span
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        className="w-5 h-5 rounded-full bg-gradient-to-r from-purple-400 to-emerald-400"
+                      />
+                      <span className="text-sm font-medium bg-gradient-to-r from-purple-400 to-emerald-400 text-transparent bg-clip-text">
+                        Next-Gen Enterprise AI
+                      </span>
+                    </span>
+                  </motion.div>
+                </div>
 
-        <div className='absolute inset-0 flex items-center justify-center'>
-          <div className='flex items-center'>
-            <div>
-              <SplitText
-                text="Hello, GSAP!"
-                className="text-2xl font-semibold text-center"
-                delay={100}
-                duration={0.6}
-                ease="power3.out"
-                splitType="chars"
-                from={{ opacity: 0, y: 40 }}
-                to={{ opacity: 1, y: 0 }}
-                threshold={0.1}
-                rootMargin="-100px"
-                textAlign="center"
-              />
+                <div className="relative">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="relative z-10"
+                  >
+                    <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight">
+                      Elevate Business with{' '}
+                      <span className="relative inline-block">
+                        <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-emerald-400 to-purple-400 animate-gradient-x">
+                          Intelligent Solutions
+                        </span>
+                        <motion.span
+                          className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-emerald-400/20 to-purple-400/20 blur-2xl"
+                          animate={{
+                            opacity: [0.5, 0.8, 0.5],
+                          }}
+                          transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            repeatType: "reverse"
+                          }}
+                        />
+                      </span>
+                    </h1>
+                  </motion.div>
+                </div>
 
-              <BlurText
-                text="Isn't this so cool?!"
-                delay={150}
-                animateBy="words"
-                direction="top"
-                className="text-2xl mb-8"
-              />
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-lg text-gray-300 max-w-xl leading-relaxed"
+                >
+                  Transform your business landscape with our enterprise-grade AI solutions. 
+                  We combine cutting-edge technology with deep industry expertise to deliver 
+                  measurable results and drive sustainable growth.
+                </motion.p>
+              </div>
 
-            </div>
+              {/* Enhanced CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9 }}
+                className="flex flex-col sm:flex-row gap-4 pt-4"
+              >
+                <button className="group relative px-8 py-4 rounded-full overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-emerald-500 rounded-full" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+                  <span className="relative font-semibold">Start Your Project</span>
+                </button>
+                <button className="group relative px-8 py-4 rounded-full border border-white/10 text-white font-medium hover:border-white/20 transition-all duration-300">
+                  <span className="relative z-10 flex items-center gap-2">
+                    Schedule Demo
+                    <motion.span
+                      className="inline-block"
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      →
+                    </motion.span>
+                  </span>
+                </button>
+              </motion.div>
+            </motion.div>
 
-            <div>
-              <Orb
-                hoverIntensity={0.5}
-                rotateOnHover={true}
-                hue={0}
-                forceHoverState={false}
-              />
-            </div>
+            {/* Right Column - Visual Elements */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative h-[600px] w-full flex items-center justify-center">
+                {/* Main Orb */}
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: 360
+                  }}
+                  transition={{ 
+                    scale: {
+                      duration: 8,
+                      repeat: Infinity,
+                      repeatType: "reverse"
+                    },
+                    rotate: {
+                      duration: 20,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }
+                  }}
+                  className="relative w-[500px] h-[500px]"
+                >
+                  <Orb />
+                </motion.div>
 
+                {/* Secondary Orbs */}
+                <motion.div
+                  initial={{ x: -100, y: -100 }}
+                  animate={{ 
+                    scale: [0.6, 0.8, 0.6],
+                    rotate: -360,
+                    x: -100,
+                    y: -100
+                  }}
+                  transition={{ 
+                    scale: {
+                      duration: 12,
+                      repeat: Infinity,
+                      repeatType: "reverse"
+                    },
+                    rotate: {
+                      duration: 25,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }
+                  }}
+                  className="absolute w-[300px] h-[300px] opacity-60"
+                >
+                  <Orb />
+                </motion.div>
+                <motion.div
+                  initial={{ x: 80, y: 80 }}
+                  animate={{ 
+                    scale: [0.5, 0.7, 0.5],
+                    rotate: 360,
+                    x: 80,
+                    y: 80
+                  }}
+                  transition={{ 
+                    scale: {
+                      duration: 10,
+                      repeat: Infinity,
+                      repeatType: "reverse"
+                    },
+                    rotate: {
+                      duration: 30,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }
+                  }}
+                  className="absolute w-[250px] h-[250px] opacity-50"
+                >
+                  <Orb />
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
         </div>
-      
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        >
+          <div className="flex flex-col items-center gap-2">
+            <SplitText
+              text="Scroll to explore"
+              className="text-sm text-gray-400"
+              splitType="chars"
+            />
+            <div className="relative">
+              <div className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start p-1">
+                <div className="w-1 h-2 bg-white/60 rounded-full animate-scroll" />
+              </div>
+              <div className="absolute inset-0 rounded-full border-2 border-white/10 blur-sm" />
+            </div>
+          </div>
+        </motion.div>
       </div>
 
-        <div className='absolute bottom-0 left-0 w-full text-center'>
-          <CurvedLoop marqueeText="Be ✦ Creative ✦ With ✦ React ✦ Bits ✦" />
-        </div>
-
-        <div>
-          <GradientText
-            colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-            animationSpeed={3}
-            showBorder={false}
-            className="custom-class"
+      {/* About Section */}
+      <div className="relative py-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-24"
           >
-            Add a splash of color!
-          </GradientText>
-        </div>
+            <div className="relative inline-block">
+              <div className="absolute -inset-x-10 -inset-y-4 bg-gradient-to-r from-purple-500/10 to-emerald-500/10 rounded-xl blur-xl" />
+              <GradientText className="relative text-4xl lg:text-6xl font-bold tracking-tight leading-tight px-4 py-2">
+                Pioneering Tomorrow&apos;s
+                <br />
+                Digital Landscape
+              </GradientText>
+            </div>
+          </motion.div>
 
-        <div className='border border-green-500 mt-8 mb-16 w-full h-[500px] text-center'>
-          <FallingText
-            text={`React Bits is a library of animated and interactive React components designed to streamline UI development and simplify your workflow.`}
-            highlightWords={["React", "Bits", "animated", "components", "simplify"]}
-            highlightClass="highlighted"
-            trigger="hover"
-            backgroundColor="transparent"
-            wireframes={false}
-            gravity={0.56}
-            fontSize="2rem"
-            mouseConstraintStiffness={0.9}
-          />
-        </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              <div className="space-y-6">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/5 to-emerald-500/5 rounded-lg blur-lg" />
+                  <BlurText
+                    text="Enterprise Technology Excellence"
+                    className="relative text-4xl font-bold text-white bg-clip-text"
+                    animateBy="words"
+                  />
+                </div>
+                <div className="relative backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10">
+                  <DecryptedText 
+                    text="We leverage cutting-edge technologies to deliver transformative enterprise solutions. Our comprehensive tech stack enables us to tackle complex challenges and drive innovation across industries."
+                    className="text-xl text-gray-300 leading-relaxed"
+                  />
+                </div>
+              </div>
+            </motion.div>
 
-        <div>
-          <DecryptedText
-            text="This text animates when in view"
-            animateOn="view"
-            speed={100}
-            revealDirection="center"
-          />
+            {/* Right Column - Icon Cloud */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="relative min-h-[600px] flex items-center justify-center group"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-br from-purple-500/10 via-emerald-500/10 to-purple-500/10 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative w-full h-full bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 transition-all duration-300 group-hover:border-white/20">
+                <IconCloudDemo />
+              </div>
+            </motion.div>
+          </div>
         </div>
-
-      <div className='h-96 w-full relative'>
-        <Threads
-          amplitude={2}
-          distance={0}
-          enableMouseInteraction={true}
-        />
       </div>
 
-      <div className='h-[500px] w-full'>
-        <Hyperspeed
-          effectOptions={{
-          distortion: 'turbulentDistortion',
-          length: 400,
-          roadWidth: 10,
-          islandWidth: 2,
-          lanesPerRoad: 4,
-          fov: 90,
-          fovSpeedUp: 150,
-          speedUp: 2,
-          carLightsFade: 0.4,
-          totalSideLightSticks: 20,
-          lightPairsPerRoadWay: 40,
-          shoulderLinesWidthPercentage: 0.05,
-          brokenLinesWidthPercentage: 0.1,
-          brokenLinesLengthPercentage: 0.5,
-          lightStickWidth: [0.12, 0.5],
-          lightStickHeight: [1.3, 1.7],
-          movingAwaySpeed: [60, 80],
-          movingCloserSpeed: [-120, -160],
-          carLightsLength: [400 * 0.03, 400 * 0.2],
-          carLightsRadius: [0.05, 0.14],
-          carWidthPercentage: [0.3, 0.5],
-          carShiftX: [-0.8, 0.8],
-          carFloorSeparation: [0, 5],
-          colors: {
-            roadColor: 0x080808,
-            islandColor: 0x0a0a0a,
-            background: 0x000000,
-            shoulderLines: 0xFFFFFF,
-            brokenLines: 0xFFFFFF,
-            leftCars: [0xD856BF, 0x6750A2, 0xC247AC],
-            rightCars: [0x03B3C3, 0x0E5EA5, 0x324555],
-            sticks: 0x03B3C3,
-          }
-          }}
-        />
-        </div>
-
-        <div>
-          <TrueFocus 
-            sentence="Webbly AI"
-            manualMode={false}
-            blurAmount={5}
-            borderColor="green"
-            animationDuration={2}
-            pauseBetweenAnimations={1}
-          />
-        </div>
-
-        <div>
-          <ScrambledText
-            className="scrambled-text-demo"
-            radius={100}
-            duration={1.2}
-            speed={0.5}
-            scrambleChars={".:"}
+      {/* Services Section */}
+      <div className="relative py-32">
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto text-center space-y-6 mb-20"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Similique pariatur dignissimos porro eius quam doloremque 
-            et enim velit nobis maxime.
-          </ScrambledText>
-        </div>
-
-        <div className='flex justify-center items-center mt-8'>
-          <h1>
-            Webbly AI
-          </h1>
-
-          <RotatingText
-            texts={['React', 'Bits', 'Is', 'Cool!']}
-            mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-            staggerFrom={"last"}
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-120%" }}
-            staggerDuration={0.025}
-            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            rotationInterval={2000}
-          />
-        </div>
-
-        <div>
-
-          <MagicBento 
-            textAutoHide={true}
-            enableStars={true}
-            enableSpotlight={true}
-            enableBorderGlow={true}
-            enableTilt={true}
-            enableMagnetism={true}
-            clickEffect={true}
-            spotlightRadius={300}
-            particleCount={12}
-            glowColor="132, 0, 255"
-          />
-
-        </div>
-
-
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-4">
+              <motion.span
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-400 to-emerald-400"
+              />
+              <span className="text-sm font-medium text-gray-300">Enterprise Solutions</span>
+            </div>
+            <GradientText className="relative text-4xl lg:text-6xl font-bold tracking-tight leading-tight px-4 py-2">
+              Our Services
+            </GradientText>
+            <p className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+              Empowering businesses with innovative technology solutions that drive growth and transformation
+            </p>
+          </motion.div>
           
-        <div>
-          our latest project 
-              <Masonry
-                items={[
-                  {
-                    id: "1",
-                    img: "https://picsum.photos/id/1015/600/900?grayscale",
-                    url: "https://example.com/one",
-                    height: 400,
-                  },
-                  {
-                    id: "2",
-                    img: "https://picsum.photos/id/1011/600/750?grayscale",
-                    url: "https://example.com/two",
-                    height: 250,
-                  },
-                  {
-                    id: "3",
-                    img: "https://picsum.photos/id/1020/600/800?grayscale",
-                    url: "https://example.com/three",
-                    height: 600,
-                  },
-                  {
-                    id: "4",
-                    img: "https://picsum.photos/id/1012/600/500?grayscale",
-                    url: "https://example.com/four",
-                    height: 300,
-                  },
-                  {
-                    id: "5",
-                    img: "https://picsum.photos/id/1013/600/700?grayscale",
-                    url: "https://example.com/five",
-                    height: 350,
-                  },
-                ]}
-                ease="power3.out"
-                duration={0.6}
-                stagger={0.05}
-                animateFrom="bottom"
-                scaleOnHover={true}
-                hoverScale={0.95}
-                blurToFocus={true}
-                colorShiftOnHover={false}
-              />
-
-        </div>
-
-
-        <div>
-          meet our team
-
-          <div className='flex flex-wrap justify-center gap-4'>
-            <ProfileCard
-                  name="Javi A. Torres"
-                  title="Software Engineer"
-                  handle="javicodes"
-                  status="Online"
-                  contactText="Contact Me"
-                  avatarUrl="/path/to/avatar.jpg"
-                  showUserInfo={true}
-                  enableTilt={true}
-                />
-                <ProfileCard
-                  name="Javi A. Torres"
-                  title="Software Engineer"
-                  handle="javicodes"
-                  status="Online"
-                  contactText="Contact Me"
-                  avatarUrl="/path/to/avatar.jpg"
-                  showUserInfo={true}
-                  enableTilt={true}
-                />
-
-                <ProfileCard
-                  name="Javi A. Torres"
-                  title="Software Engineer"
-                  handle="javicodes"
-                  status="Online"
-                  contactText="Contact Me"
-                  avatarUrl="/path/to/avatar.jpg"
-                  showUserInfo={true}
-                  enableTilt={true}
-                />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 mb-16">
+            {[
+              {
+                title: "Web Development",
+                desc: "Modern web applications built with cutting-edge technologies for optimal performance and user experience",
+                stack: ["Next.js", "React", "Node.js"],
+                icon: "🌐",
+                features: ["Responsive Design", "SEO Optimization", "Performance Tuning"]
+              },
+              {
+                title: "Mobile Development",
+                desc: "Native and cross-platform mobile experiences that delight users across all devices",
+                stack: ["React Native", "Flutter", "Swift"],
+                icon: "📱",
+                features: ["Native Performance", "Cross-Platform", "Offline Support"]
+              },
+              {
+                title: "AI Solutions",
+                desc: "Intelligent systems powered by machine learning to automate and enhance business processes",
+                stack: ["TensorFlow", "PyTorch", "OpenAI"],
+                icon: "🤖",
+                features: ["Machine Learning", "Natural Language", "Computer Vision"]
+              },
+              {
+                title: "Cloud Architecture",
+                desc: "Scalable and secure cloud infrastructure designed for enterprise needs",
+                stack: ["AWS", "Azure", "GCP"],
+                icon: "☁️",
+                features: ["Auto Scaling", "Security", "Cost Optimization"]
+              },
+              {
+                title: "DevOps Services",
+                desc: "Streamline development and operations with modern CI/CD practices",
+                stack: ["Docker", "Kubernetes", "Jenkins"],
+                icon: "⚡",
+                features: ["CI/CD Pipeline", "Container Management", "Monitoring"]
+              },
+              {
+                title: "Cybersecurity",
+                desc: "Protect your digital assets with advanced security solutions",
+                stack: ["Penetration Testing", "Security Audits", "Compliance"],
+                icon: "🔒",
+                features: ["Threat Detection", "Risk Assessment", "Compliance"]
+              }
+            ].map((service, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-emerald-600/5 to-purple-600/10 rounded-3xl transform transition-all duration-500 group-hover:scale-[1.02] group-hover:opacity-100 opacity-50" />
+                <div className="relative p-8 rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-emerald-400/20 blur-xl" />
+                      <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10">
+                        <span className="text-2xl">{service.icon}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-white via-white to-gray-300 bg-clip-text text-transparent">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-300 mb-8 leading-relaxed">{service.desc}</p>
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {service.stack.map((tech, j) => (
+                          <span
+                            key={j}
+                            className="px-3 py-1.5 rounded-full bg-white/5 text-sm border border-white/10 hover:border-white/20 transition-colors duration-300 flex items-center gap-1.5"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-400 to-emerald-400" />
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-400 mb-3">Key Features</h4>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, k) => (
+                          <li key={k} className="flex items-center text-sm text-gray-300">
+                            <span className="mr-2 text-purple-400/80">⟡</span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          <div className="relative h-32 overflow-hidden">
+            <CurvedLoop />
           </div>
         </div>
+      </div>
 
-
-    </div>
+      {/* Portfolio Section */}
+      <div className="relative py-32">
+        <HeroParallaxDemo />
+      </div>
+    </main>
   );
 }
