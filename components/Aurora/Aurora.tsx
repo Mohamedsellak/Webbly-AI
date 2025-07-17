@@ -1,3 +1,6 @@
+/*
+	Installed from https://reactbits.dev/ts/tailwind/
+*/
 'use client';
 import { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
